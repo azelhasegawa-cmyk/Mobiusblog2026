@@ -7,13 +7,13 @@
     
     <link rel="stylesheet" href="css/Style.css">
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <h1 class="main-title">MOBIUS 2026</h1>
-        <nav>
+        <h1 class="glow-title">MOBIUS 2026</h1>
+        <nav id="main-nav">
             <button class="nav-btn active">HOME</button>
             <button class="nav-btn">ABOUT</button>
             <button class="nav-btn">MOTIVATION</button>
@@ -26,22 +26,31 @@
     </header>
 
     <main>
-        <div class="hero-section">
-            <h2 class="sub-title">MOBIUS 2026</h2>
+        <div class="glass-card">
+            <h2 class="card-title">MOBIUS 2026</h2>
             
-            <div class="card">
-                <img src="images/group-photo.jpg" alt="Mobius Group" class="main-img">
-                
-                <h3 class="grade-text">Grade 11-Mobius</h3>
-                <p class="desc-text">Explore the creative world of blogging with 11-Mobius.</p>
+            <div class="image-wrapper">
+                <img src="images/YOUR_IMAGE_HERE.jpg" alt="Mobius Group" class="main-photo">
             </div>
+            
+            <h3 class="grade-tag">Grade 11-Mobius</h3>
+            <p class="intro-text">Explore the creative world of blogging with 11-Mobius.</p>
         </div>
     </main>
 
     <footer>
-        <p class="footer-text">EST. MOBIUS 2026</p>
+        <p>EST. MOBIUS 2026</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+        const buttons = document.querySelectorAll('.nav-btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                console.log(`Navigating to ${btn.innerText}`);
+            });
+        });
+    </script>
 </body>
 </html>
